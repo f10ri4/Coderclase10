@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+*{
+	padding: 0;
+	margin: 0;
+	font-family: 'libre baskerville', sans-serif;
+	box-sizing: border-box;
+	overflow-x: hidden;
+}
+
+
+html{
+	font-size: 62.5%;
+}
+
+body{
+	background-image: url(../img/bgimg.jpg);
+	background-attachment: fixed;
+	overflow-x: hidden;
+}
+
+h1,h2{
+	color: black
+	font-family: 'libre baskerville', sans-serif;
+}
+
+
+p{
+	color:#817E7E;
+	line-height: 2rem;
+	font-size: 1.6rem;
+}
+
+/*Grid layout*/
+.contenedor{
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+	grid-template-areas: "nav" "header" "productos" "aside" "footer";
+}
+
+/*Areas del layout*/
+#PrimeraNav{
+	grid-area: nav;
+}
+
+#header{
+	grid-area: header;
+}
+
+#productos{
+	grid-area: productos;
+}
+
+#aside{
+	grid-area: aside;
+	padding: 20px 0;
+	/****display flex****/
+}
+
+#footer{
+	grid-area: footer;
+}
+
+
+/* Botonera*/ 
+.botonera {
+		position: sticky;
+		top: 0;
+		padding: 10px 30px;
+		display: flex;
+		flex-direction: column;
+		align-items: space-around;
+	}
+
+	.botonera img{
+		width: 300px;
+		margin-bottom: 20px;
+	}
+
+	.botonera ol{
+		display: flex;
+	}
+
+	.botonera ol li{
+		list-style: none;
+		margin-right: 20px;
+	}
+
+		.botonera ol li a{
+			font-size: 1.8rem;
+			text-decoration: none;
+			color: darkgrey;
+		}
+
+		/*Hover*/
+		.botonera ol li a:hover{
+			color: black;
+			font-weight: 700;
+		}
+
+
+.encabezado__img--fluid{
+	/*size*/
+	width: 100%;
+}
+
+/*Inicio del footer*/
+.pie{
+	/*padding*/
+	padding:30px;
+	display: sticky;
+	flex-direction: row;
+	align-items: left;
+	background-color: lightgoldenrodyellow;
+	margin-top: 50px;
+}
+
+.pie a{
+	text-decoration: none;
+}
+
+/*Tamanio de letra del Footer*/
+.pie__icon--sm{
+	width: 30px;
+}
+
+.foot_title{
+	font-size: 2rem;
+	font-color: darkgreen;
+}
+
+
+#productos h1,
+#productos h2{
+	text-transform: uppercase;
+	font-size: 3rem;
+	text-align: center;
+	padding: 20px 0;
+	background-color: rgba(255, 255, 255, .7);
+	font-family: 'libre baskerville', sans-serif;
+	margin: 20px 0;
+}
+
+#productos .galeria{
+	margin: 20px 0;
+}
+	#productos .galeria figure{
+		margin: 10px 0;
+	}
+
+		#productos .galeria figure img{
+			border-top-left-radius: 5px;
+			border-top-right-radius: 5px;
+			width: 100%;
+		}
+
+		#productos .galeria figure figcaption{
+			font-size: 2.5rem;
+			color: darkslategrey;
+			padding: 10px 0;
+			background-color: white;
+			text-align: center;
+		}
+
+		#productos .galeria p.price{
+			color: white;
+			padding-bottom: 10px;
+			background-color: silver;
+
+			text-align: center;
+		}
+
+
+/* Home*/
+.segundaNav{
+	background-color: lightgrey;
+	color:#676565 ;
+	padding: 10px 30px;
+	font-size: 1.3rem;
+	line-height: 1.6em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+	.segundaNav img{
+		margin: 10px;
+	}
+
+
+/* Media queries*/
+
+@media (min-width: 768px){
+	.contenedor{
+		grid-template-columns: 20vw 80vw;
+		grid-template-rows: repeat(5, auto);
+		grid-template-areas: "nav nav" "header header" 
+		"productos	productos" "aside aside" "footer footer";
+	}
+
+	#productos .galeria{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	#productos .galeria figure{
+		width: 90%;
+	}
+
+	#aside{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+	}
+
+	.botonera{
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+
+@media (min-width: 1024px){
+	.contenedor{
+		grid-template-columns: 20vw 60vw 20vw;
+		grid-template-rows: repeat(4, auto);
+		grid-template-areas: "nav nav nav" 
+		"header header header" 
+		"productos	productos aside" 
+		"footer footer footer";
+	}
+
+	#aside{
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+		background-color: white;
+	}
+
+		#aside img{
+			width: 70%;
+		}
+
+	#productos .galeria figure{
+		width: 100%;
+	}
+
+	.botonera{
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+		.botonera img{
+			width: 250px;
+			margin-bottom: 0;
+		}
+}
+
+@media (min-width: 1200px){
+	#productos .galeria{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+	}
+
+		#productos .galeria figure{
+			width:30% ;
+		}
+
+}
+
+/*Foto de perfil*/
+
+.SobreMi{
+	font-size: 1.3rem;
+	/*size*/
+	border-top-left-radius: 15px;
+	width: 100%;
+	/*padding*/
+	padding:30px;
+	display: sticky;
+	align-items: center;
+	background-color: lightgoldenrodyellow;
+	margin-top: 50px;
+	flex-direction: row;
+	
